@@ -1,0 +1,13 @@
+package com.example.jobapp.job;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class JobController {
+    private  List<Job> jobs = new ArrayList<>();
+
+
+    public List<Job> findAll(){
+        return jobs;
+    }
+}
