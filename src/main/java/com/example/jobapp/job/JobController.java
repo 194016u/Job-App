@@ -24,7 +24,7 @@ public class JobController {
         return "Job added successfully";
     }
 
-    //get job by id
+    //get job by id ..
     @GetMapping("/jobs/{id}")
     public Job getJobById(@PathVariable Long id){
         Job job =jobService.getJobById(id);
