@@ -13,21 +13,24 @@ public class JobController {
     private JobService jobService;
 
     public JobController(JobService jobService) {
+        
         this.jobService = jobService;
     }
 
     @GetMapping("/jobs")
-    public List<Job> findAll(){
-        return jobService.findAll();
+    public ResponseEntity<List<Job>>  findAll(){
+        
+        return ResponseEntity.ok(jobService.findAll());
     }
 
+    //post request
     @PostMapping("/jobs")
-    public String createJob(@RequestBody Job job){
+    public ResponseEntity<String>  createJob(@RequestBody Job job){
         jobService.createJob(job);
-        return "Job added successfully";
+        return new ResponseEntity<>("Job added successfully", HttpStatus.OK);
     }
 
-    //get job by id .. .
+    //get job by id
     @GetMapping("/jobs/{id}")
     public ResponseEntity<Job> getJobById(@PathVariable Long id){
         Job job =jobService.getJobById(id);
