@@ -1,5 +1,6 @@
 package com.example.jobapp.review.impl;
 
+import com.example.jobapp.company.Company;
 import com.example.jobapp.company.CompanyService;
 import com.example.jobapp.review.Review;
 import com.example.jobapp.review.ReviewRepository;
@@ -27,6 +28,11 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public void addReview(Long companyId, Review review) {
+        Company company = companyService.getCompanyById(companyId);
+        if (company != null){
+            review.setCompany(company);
+            reviewRepository.save(review);
+        }
 
     }
 }
