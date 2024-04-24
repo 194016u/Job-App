@@ -19,4 +19,8 @@ public class ReviewController {
     public ResponseEntity<List<Review>> getAllReviews(@PathVariable Long companyId){
         return new ResponseEntity<>(reviewService.getAllReviews(companyId), HttpStatus.OK);
     }
+    @PostMapping("/reviews")
+    public ResponseEntity<String> addReview(@PathVariable Long companyId, @RequestBody Review review){
+
+    }
 }
