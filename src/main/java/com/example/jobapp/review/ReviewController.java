@@ -26,7 +26,9 @@ public class ReviewController {
            return new ResponseEntity<>("Review Added Successfully",HttpStatus.OK);
        else
            return new ResponseEntity<>("Review Not Saved Successfully",HttpStatus.NOT_FOUND);
-
-
+    }
+    @GetMapping("/review/{reviewId}")
+    public ResponseEntity<Review> getReview(@PathVariable Long companyId, @PathVariable Long reviewId){
+        return new  ResponseEntity<>(reviewService.getReview(companyId,reviewId),HttpStatus.OK);
     }
 }
