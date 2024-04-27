@@ -56,7 +56,7 @@ public class ReviewServiceImpl implements ReviewService {
             return false;
         }
     }
-
+//delete request
     @Override
     public boolean deleteReview(Long companyId, Long reviewId) {
         if (companyService.getCompanyById(companyId)!= null && reviewRepository.existsById(reviewId)){
