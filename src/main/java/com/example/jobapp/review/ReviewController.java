@@ -14,12 +14,12 @@ public class ReviewController {
     public ReviewController(ReviewService reviewService) {
         this.reviewService = reviewService;
     }
-
+    // get review
     @GetMapping("/reviews")
     public ResponseEntity<List<Review>> getAllReviews(@PathVariable Long companyId) {
         return new ResponseEntity<>(reviewService.getAllReviews(companyId), HttpStatus.OK);
     }
-
+    // post request
     @PostMapping("/reviews")
     public ResponseEntity<String> addReview(@PathVariable Long companyId, @RequestBody Review review) {
         boolean isReviewSaved = reviewService.addReview(companyId, review);
