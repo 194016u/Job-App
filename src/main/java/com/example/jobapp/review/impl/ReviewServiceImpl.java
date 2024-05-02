@@ -19,7 +19,7 @@ public class ReviewServiceImpl implements ReviewService {
         this.reviewRepository = reviewRepository;
         this.companyService = companyService;
     }
-
+ //get review request
     @Override
     public List<Review> getAllReviews(Long companyId) {
         List<Review> reviews = reviewRepository.findByCompanyId(companyId);
