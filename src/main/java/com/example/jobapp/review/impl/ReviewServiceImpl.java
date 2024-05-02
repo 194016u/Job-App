@@ -25,7 +25,7 @@ public class ReviewServiceImpl implements ReviewService {
         List<Review> reviews = reviewRepository.findByCompanyId(companyId);
         return reviews;
     }
-
+//add review request
     @Override
     public boolean addReview(Long companyId, Review review) {
         Company company = companyService.getCompanyById(companyId);
